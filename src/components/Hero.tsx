@@ -44,8 +44,8 @@ export default function Hero() {
         style={{ background: "radial-gradient(circle, rgba(14,165,233,0.05) 0%, transparent 70%)", filter: "blur(40px)", animationDelay: "1.5s" }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-14 sm:py-20">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left content */}
           <div>
             {/* Available badge */}
@@ -59,7 +59,7 @@ export default function Hero() {
               HELLO, I&apos;M
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-4" style={{ color: "var(--text)" }}>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-4" style={{ color: "var(--text)" }}>
               Neil Charlie
               <br />
               <span style={{ color: "var(--accent)" }}>Rebenque</span>
@@ -90,10 +90,10 @@ export default function Hero() {
             </div>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8">
               <a
                 href="#projects"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 accent-glow"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 accent-glow"
                 style={{ backgroundColor: "var(--accent)", color: "#060d1a" }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.9")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
@@ -103,7 +103,7 @@ export default function Hero() {
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
                 style={{ backgroundColor: "var(--accent-dim)", border: "1px solid var(--border)", color: "var(--accent)" }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--accent-hover)")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--accent-dim)")}
@@ -113,7 +113,7 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+                className="flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
                 style={{ border: "1px solid var(--border-solid)", color: "var(--text-muted)" }}
                 onMouseEnter={(e) => {
                   ;(e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--accent)"
@@ -169,7 +169,7 @@ export default function Hero() {
 
               {/* Profile image */}
               <div
-                className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-2) 100%)",
                   border: "2px solid var(--border-solid)",
@@ -183,16 +183,16 @@ export default function Hero() {
                 />
 
               {/* Tech badges floating */}
-              <div className="absolute -top-2 -right-4 px-3 py-1.5 rounded-full text-xs font-semibold float" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "var(--accent)", fontFamily: "JetBrains Mono, monospace", animationDelay: "0.3s" }}>
+              <div className="absolute -top-2 -right-4 hidden px-3 py-1.5 rounded-full text-xs font-semibold float sm:block" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "var(--accent)", fontFamily: "JetBrains Mono, monospace", animationDelay: "0.3s" }}>
                 {"<PHP />"}
               </div>
-              <div className="absolute -bottom-2 -left-4 px-3 py-1.5 rounded-full text-xs font-semibold float" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#f7df1e", fontFamily: "JetBrains Mono, monospace", animationDelay: "1s" }}>
+              <div className="absolute -bottom-2 -left-4 hidden px-3 py-1.5 rounded-full text-xs font-semibold float sm:block" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#f7df1e", fontFamily: "JetBrains Mono, monospace", animationDelay: "1s" }}>
                 JS
               </div>
-              <div className="absolute top-1/2 -right-8 px-3 py-1.5 rounded-full text-xs font-semibold float" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#e34f26", fontFamily: "JetBrains Mono, monospace", animationDelay: "0.7s" }}>
+              <div className="absolute top-1/2 -right-8 hidden px-3 py-1.5 rounded-full text-xs font-semibold float sm:block" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#e34f26", fontFamily: "JetBrains Mono, monospace", animationDelay: "0.7s" }}>
                 HTML5
               </div>
-              <div className="absolute top-8 -left-8 px-3 py-1.5 rounded-full text-xs font-semibold float" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#3178c6", fontFamily: "JetBrains Mono, monospace", animationDelay: "1.4s" }}>
+              <div className="absolute top-8 -left-8 hidden px-3 py-1.5 rounded-full text-xs font-semibold float sm:block" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "#3178c6", fontFamily: "JetBrains Mono, monospace", animationDelay: "1.4s" }}>
                 MySQL
               </div>
             </div>
