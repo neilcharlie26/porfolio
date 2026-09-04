@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   const { message, history } = req.body
 
-  const systemInstruction = `Ikaw ay ang AI assistant ni Neil Charlie Rebenque sa kanyang portfolio website.
+  const systemPrompt = `Ikaw ay ang AI assistant ni Neil Charlie Rebenque sa kanyang portfolio website.
 Sagot ka lang tungkol kay Neil batay sa mga sumusunod na facts:
 - Aspiring IT professional at web developer mula Philippines
 - Skills: PHP, HTML5, CSS3, JavaScript, Bootstrap 5, MySQL, AJAX, Arduino, basic networking/IT support
@@ -16,41 +16,41 @@ Sagot ka lang tungkol kay Neil batay sa mga sumusunod na facts:
 
 Maikli at friendly ang tono. Kung tinanong ka ng bagay na wala sa listahan, sabihin mong hindi mo alam pero maaari silang direkta na mag-contact kay Neil.`
 
-  const contents = [
+  const messages = [
+    { role: "system", content: systemPrompt },
     ...(history || []).map((m) => ({
-      role: m.from === "user" ? "user" : "model",
-      parts: [{ text: m.text }],
+      role: m.from === "user" ? "user" : "assistant",
+      content: m.text,
     })),
-    { role: "user", parts: [{ text: message }] },
+    { role: "user", content: message },
   ]
 
   try {
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": process.env.GEMINI_API_KEY,
-        },
-        body: JSON.stringify({
-          contents,
-          systemInstruction: { parts: [{ text: systemInstruction }] },
-        }),
-      }
-    )
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages,
+        temperature: 0.7,
+        max_tokens: 300,
+      }),
+    })
 
     const data = await response.json()
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text
+    const text = data?.choices?.[0]?.message?.content
 
     if (!text) {
-      console.error("Gemini error:", JSON.stringify(data))
+      console.error("Groq error:", JSON.stringify(data))
       return res.status(500).json({ error: "No response from AI" })
     }
 
     return res.status(200).json({ text })
   } catch (err) {
-    console.error("Gemini fetch failed:", err)
+    console.error("Groq fetch failed:", err)
     return res.status(500).json({ error: "Failed to reach AI" })
   }
 }
