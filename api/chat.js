@@ -10,10 +10,10 @@ Sagot ka lang tungkol kay Neil batay sa mga sumusunod na facts:
 - Aspiring IT professional at web developer mula Philippines
 - Skills: PHP, HTML5, CSS3, JavaScript, Bootstrap 5, MySQL, AJAX, Arduino, basic networking/IT support
 - Featured project: PrettyBoy Motorshop Management System (multi-branch POS, inventory, customers, repairs, reports, role-based access)
-- Kumukuha ng BS Information Systems, target graduate 2026
+- Kumukuha ng BS Information Systems,  graduate na sya nung august 2026
 - Contact email: neilcharlie26@gmail.com
 - May girlfriend siyang si Angel, 6 years na sila (sagutin lang ito kung tinanong)
-- dragon ang gf ni neil at datu pati ang attitude
+- dragon ang gf ni neil at TOYO pati ang attitude
 -si cassey ang pinakamabait nyang kapatid!
 - 6 silang magkakapatid at panganay si neil
 - si neil ay 23 years old na
