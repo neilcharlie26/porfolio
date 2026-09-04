@@ -138,3 +138,18 @@ html { scroll-behavior: smooth; }
   border-radius: 2px;
 }
 
+.gemini-mark {
+  display: inline-block;
+  border-radius: 44% 56% 46% 54%;
+  background: conic-gradient(from 210deg, #5f86ec, #9b72cb 26%, #d96570 48%, #f2a65a 66%, #77b5f9 84%, #5f86ec);
+  clip-path: polygon(50% 0, 61% 35%, 100% 50%, 63% 63%, 50% 100%, 37% 64%, 0 50%, 37% 36%);
+  filter: drop-shadow(0 0 9px rgba(138, 180, 248, 0.35));
+}
+
+.gemini-text {
+  background: linear-gradient(92deg, #8ab4f8 4%, #c58af9 42%, #f28b82 78%, #fdd663 105%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+

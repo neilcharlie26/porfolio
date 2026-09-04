@@ -5,6 +5,8 @@ export default async function handler(req, res) {
 
   const { message, history } = req.body
 
+  const cleanResponse = (text) => text.replace(/\*/g, "")
+
   const systemPrompt = `Ikaw ay ang AI assistant ni Neil Charlie Rebenque sa kanyang portfolio website.
 Sagot ka lang tungkol kay Neil batay sa mga sumusunod na facts:
 - Aspiring IT professional at web developer mula Philippines
@@ -56,7 +58,7 @@ Maikli at friendly ang tono. Kung tinanong ka ng bagay na wala sa listahan, sabi
       return res.status(500).json({ error: "No response from AI" })
     }
 
-    return res.status(200).json({ text })
+    return res.status(200).json({ text: cleanResponse(text) })
   } catch (err) {
     console.error("Groq fetch failed:", err)
     return res.status(500).json({ error: "Failed to reach AI" })

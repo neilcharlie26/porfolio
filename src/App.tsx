@@ -21,6 +21,7 @@ import Resume from "./components/Resume"
 import Contact from "./components/Contact"
 import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
+import Chatbot from "./components/Chatbot"
 import BackToTop from "./components/BackToTop"
 
 export default function App() {
@@ -61,6 +62,7 @@ export default function App() {
         <FAQ />
       </main>
       <Footer />
+      <Chatbot />
       <BackToTop />
     </div>
   )
