@@ -176,12 +176,11 @@ export default function Hero() {
                   boxShadow: "0 0 60px rgba(0,212,255,0.12), inset 0 0 60px rgba(0,212,255,0.03)",
                 }}
               >
-                <img
-                  src="../../profpic.png"
-                  alt="Neil Charlie Rebenque"
-                  className="w-full h-full object-cover"
+                            <img
+              src="/profpic.png"
+              alt="Neil Charlie Rebenque"
+              className="w-full h-full object-cover"
                 />
-              </div>
 
               {/* Tech badges floating */}
               <div className="absolute -top-2 -right-4 px-3 py-1.5 rounded-full text-xs font-semibold float" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-solid)", color: "var(--accent)", fontFamily: "JetBrains Mono, monospace", animationDelay: "0.3s" }}>
@@ -206,6 +205,8 @@ export default function Hero() {
         <span className="text-xs" style={{ color: "var(--text-muted)", fontFamily: "JetBrains Mono, monospace" }}>scroll</span>
         <ChevronDown size={16} style={{ color: "var(--text-muted)" }} className="animate-bounce" />
       </div>
+    </div>
     </section>
   )
+  
 }
