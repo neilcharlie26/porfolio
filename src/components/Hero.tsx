@@ -177,7 +177,7 @@ export default function Hero() {
                 }}
               >
                             <img
-              src="/profpic.png"
+              src={`${import.meta.env.BASE_URL}profpic.png`}
               alt="Neil Charlie Rebenque"
               className="w-full h-full object-cover"
                 />
