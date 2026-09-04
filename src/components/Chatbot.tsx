@@ -47,18 +47,31 @@ export default function Chatbot() {
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }) }, [messages, typing])
 
   const sendMessage = async (value: string) => {
-    const text = value.trim()
-    if (!text || typing) return
-    const nextMessages: Message[] = [...messages, { from: "user", text }]
-    setMessages(nextMessages)
-    setInput("")
-    setError("")
-    setTyping(true)
+  const text = value.trim()
+  if (!text || typing) return
+  const nextMessages: Message[] = [...messages, { from: "user", text }]
+  setMessages(nextMessages)
+  setInput("")
+  setError("")
+  setTyping(true)
 
-    await new Promise((resolve) => setTimeout(resolve, 450))
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, history: messages }),
+    })
+
+    if (!response.ok) throw new Error("Request failed")
+
+    const data = await response.json()
+    setMessages((current) => [...current, { from: "assistant", text: data.text }])
+  } catch (err) {
     setMessages((current) => [...current, { from: "assistant", text: getLocalResponse(text) }])
+  } finally {
     setTyping(false)
   }
+}
 
   const resetChat = () => {
     setMessages([])
