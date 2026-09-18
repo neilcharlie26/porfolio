@@ -47,7 +47,7 @@ export default function Contact() {
               <h3 className="text-lg font-bold mb-4" style={{ fontFamily: "Outfit, sans-serif", color: "var(--text)" }}>Contact Details</h3>
               <div className="space-y-4">
                 {[
-                  { icon: Mail, label: "Email", value: "neil.rebenque@email.com", color: "var(--accent)" },
+                  { icon: Mail, label: "Email", value: "neilcharlie26@email.com", color: "var(--accent)" },
                   { icon: Phone, label: "Phone", value: "0991-688-2192", color: "#22d3a0" },
                   { icon: MapPin, label: "Location", value: "Philippines", color: "#818cf8" },
                 ].map(({ icon: Icon, label, value, color }) => (
